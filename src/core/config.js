@@ -1,12 +1,12 @@
 // Replace with your own firebase config!
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyA0PGY1nmOxRBw1M5R0v-NDYdnQe2qT8_k",
-    authDomain: "assignments-76fde.firebaseapp.com",
-    databaseURL: "https://assignments-76fde.firebaseio.com",
-    projectId: "assignments-76fde",
-    storageBucket: "assignments-76fde.appspot.com",
-    messagingSenderId: "390102744713",
-    appId: "1:390102744713:web:a0862d6f688aa56c2d1058",
-    measurementId: "G-1WJ15E4N60"
-  
+    apiKey: "AIzaSyCJKe1malL2MVui7yuw4QFogpLIrqAwpY8",
+    authDomain: "assignment-70d09.firebaseapp.com",
+    databaseURL: "https://assignment-70d09.firebaseio.com",
+    projectId: "assignment-70d09",
+    storageBucket: "assignment-70d09.appspot.com",
+    messagingSenderId: "845067954581",
+    appId: "1:845067954581:web:099c648488f44966a46e9c",
+    measurementId: "G-HZB3K5WRDP"
+
 };

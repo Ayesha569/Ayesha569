@@ -4,6 +4,7 @@ import { View, Text, TextInput, DatePickerAndroid, ScrollView, StyleSheet, Touch
 import Modal from "react-native-modal";
 import { Textarea } from 'native-base';
 import * as DocumentPicker from 'expo-document-picker';
+import {logoutUser} from '../../api/auth-api'
 
 // create a component
 class Assignments extends Component {
@@ -49,6 +50,11 @@ class Assignments extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <TouchableWithoutFeedback onPress={() => logoutUser()}>
+                    <View style={{ width: 200, height: 50, marginTop: 20, backgroundColor: '#B1B9B9', justifyContent: 'center', alignItems: 'center', borderRadius: 10 }}>
+                        <Text style={{ color: 'white' }} >Sign out</Text>
+                    </View>
+                </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback onPress={() => this.toggleModal()}>
                     <View style={{ width: 200, height: 50, marginTop: 20, backgroundColor: '#B1B9B9', justifyContent: 'center', alignItems: 'center', borderRadius: 10 }}>
                         <Text style={{ color: 'white' }} >Upload Assignment</Text>
@@ -98,20 +104,20 @@ class Assignments extends Component {
                     </ScrollView>
                 </Modal>
                 <Modal isVisible={this.state.isModalVisible2}>
-                    <View style={{ flex: 1, backgroundColor: 'white',borderRadius:5 ,padding:5}}>
+                    <View style={{ flex: 1, backgroundColor: 'white', borderRadius: 5, padding: 5 }}>
 
                         <ScrollView showsVerticalScrollIndicator={false}>
                             <View style={{ flex: 1, backgroundColor: 'white', padding: 10, borderRadius: 5 }}>
 
                                 <Text style={{ marginTop: 10, fontWeight: 'bold', marginLeft: 10 }}>Title</Text>
-                                <Text style={{ marginTop: 10, alignSelf: 'center',fontSize:16,fontWeight:'bold' }} >Task1</Text>
+                                <Text style={{ marginTop: 10, alignSelf: 'center', fontSize: 16, fontWeight: 'bold' }} >Task1</Text>
 
                                 <Text style={{ marginTop: 10, fontWeight: 'bold', marginLeft: 10 }}>Due Date</Text>
                                 <Text style={{ marginTop: 10, alignSelf: 'center', color: 'red' }} >02/02/2020</Text>
                                 <Text style={{ marginTop: 10, fontWeight: 'bold', marginLeft: 10 }}>Charges</Text>
                                 <Text style={{ marginTop: 10, alignSelf: 'center' }} >5000</Text>
                                 <Text style={{ marginTop: 10, fontWeight: 'bold', marginLeft: 10 }}>Description</Text>
-                                <Textarea value={this.state.Assignmentlist[2].name} style={{ marginTop: 10,height:200, borderWidth: 1, padding: 3, borderColor: '#cececd', width: '95%', alignSelf: 'center', borderRadius: 10,  }} />
+                                <Textarea value={this.state.Assignmentlist[2].name} style={{ marginTop: 10, height: 200, borderWidth: 1, padding: 3, borderColor: '#cececd', width: '95%', alignSelf: 'center', borderRadius: 10, }} />
                                 {this.state.filelist.map((data, i) => (
                                     <View key={i} style={{ alignSelf: 'center', marginTop: 10, width: '95%', backgroundColor: '#cececd', borderRadius: 5, height: 50, justifyContent: 'center' }}>
                                         <Text style={{ fontWeight: 'bold', marginLeft: 10 }} >{data.name}</Text>
@@ -124,6 +130,7 @@ class Assignments extends Component {
                                     <Text style={{ color: 'white', fontWeight: 'bold' }} >Back</Text>
                                 </View>
                             </TouchableWithoutFeedback>
+
                         </ScrollView>
                     </View>
                 </Modal>

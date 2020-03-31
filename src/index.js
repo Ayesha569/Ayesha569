@@ -8,19 +8,21 @@ import {
   ForgotPasswordScreen,
   AuthLoadingScreen,
   Dashboard,
-  Home,
+  WelCome,
+  UserDashBoard,
   AssignmentDetail
 } from "./screens";
 
 const Router = createStackNavigator(
   {
+    WelCome,
     HomeScreen,
     LoginScreen,
     RegisterScreen,
     ForgotPasswordScreen,
     Dashboard,
     AuthLoadingScreen,
-    Home,
+    UserDashBoard,
     AssignmentDetail
   },
   {

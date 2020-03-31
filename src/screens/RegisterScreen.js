@@ -36,7 +36,7 @@ const RegisterScreen = ({ navigation }) => {
       return;
     }
 
-    setLoading(true);
+     setLoading(true);
 
     const response = await signInUser({
       name: name.value,
@@ -46,8 +46,10 @@ const RegisterScreen = ({ navigation }) => {
 
     if (response.error) {
       setError(response.error);
-    }
-
+     }
+    // else {
+    //   navigation.navigate("LoginScreen");
+    // }//
     setLoading(false);
   };
 
